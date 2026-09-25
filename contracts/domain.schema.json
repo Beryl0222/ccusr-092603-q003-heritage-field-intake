@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "青年田野资料入库关领域事件",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "occurred_at",
+    "version",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "COLLECTOR_QUALIFIED",
+        "OBSERVATION_UPLOADED",
+        "CLAIM_REVIEWED",
+        "CONSENT_WITHDRAWN",
+        "ARCHIVE_RELEASED"
+      ]
+    },
+    "aggregate_type": {
+      "type": "string",
+      "enum": [
+        "field_campaign",
+        "place_identity",
+        "source_observation",
+        "archive_claim"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "payload_required_by_event": {
+    "OBSERVATION_UPLOADED": [
+      "file_hash",
+      "consent_version"
+    ],
+    "CLAIM_REVIEWED": [
+      "reviewer_id",
+      "source_refs"
+    ],
+    "CONSENT_WITHDRAWN": [
+      "effective_at",
+      "affected_scope"
+    ]
+  },
+  "additionalProperties": false
+}

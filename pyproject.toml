@@ -1,0 +1,8 @@
+[project]
+name = "heritage-field-intake"
+version = "0.1.0"
+description = "青年田野资料入库关领域契约"
+requires-python = ">=3.11"
+
+[tool.unittest]
+start-directory = "tests"
