@@ -1,0 +1,38 @@
+[
+  {
+    "event_id": "evt-reupload-inspect-dup",
+    "event_type": "OBSERVATION_UPLOADED",
+    "aggregate_type": "source_observation",
+    "aggregate_id": "obs-inspect-01",
+    "occurred_at": "2026-08-05T09:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s002",
+      "plan_id": "plan-2026-gulou",
+      "place_id": "place-gulou-old",
+      "participant_id": "p2-chen",
+      "file_hash": "sha256:3333333333333333",
+      "consent_version": "consent-v1-2026",
+      "captured_at": "2026-08-04T09:15:00+08:00"
+    },
+    "idempotency_key": "dev-s002:obs-inspect-01"
+  },
+  {
+    "event_id": "evt-reupload-inspect-conflict",
+    "event_type": "OBSERVATION_UPLOADED",
+    "aggregate_type": "source_observation",
+    "aggregate_id": "obs-inspect-01",
+    "occurred_at": "2026-08-05T09:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s002",
+      "plan_id": "plan-2026-gulou",
+      "place_id": "place-gulou-old",
+      "participant_id": "p2-chen",
+      "file_hash": "sha256:deadbeefdeadbeef",
+      "consent_version": "consent-v1-2026",
+      "captured_at": "2026-08-04T09:15:00+08:00"
+    },
+    "idempotency_key": "dev-s002:obs-inspect-01"
+  }
+]

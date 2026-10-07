@@ -20,19 +20,42 @@
       "type": "string",
       "enum": [
         "COLLECTOR_QUALIFIED",
-        "OBSERVATION_UPLOADED",
-        "CLAIM_REVIEWED",
+        "COLLECTION_PLAN_APPROVED",
+        "PLACE_REGISTERED",
+        "PLACE_ALIAS_RECORDED",
+        "PLACES_MERGED",
+        "CONSENT_GRANTED",
         "CONSENT_WITHDRAWN",
-        "ARCHIVE_RELEASED"
+        "RAW_FILE_RECEIVED",
+        "OBSERVATION_UPLOADED",
+        "CLAIM_PROPOSED",
+        "CLAIM_REVIEWED",
+        "CORRECTION_FILED",
+        "RESEARCH_USE_RECORDED",
+        "ARCHIVE_RELEASED",
+        "ARCHIVE_ANNOTATED",
+        "RELEASE_RESTRICTED",
+        "TRANSCODE_JOB_STARTED",
+        "TRANSCODE_SHARD_COMPLETED",
+        "DISPUTE_OPENED",
+        "DISPUTE_RESOLVED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "field_campaign",
-        "place_identity",
+        "training_qualification",
+        "collection_plan",
+        "place",
+        "consent",
+        "source_file",
         "source_observation",
-        "archive_claim"
+        "archive_claim",
+        "review",
+        "correction",
+        "transcode_job",
+        "dispute"
       ]
     },
     "aggregate_id": {
@@ -47,22 +70,114 @@
       "type": "integer",
       "minimum": 1
     },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "description": "离线设备生成的稳定事件键，补传时保持不变"
+    },
     "payload": {
       "type": "object"
     }
   },
   "payload_required_by_event": {
-    "OBSERVATION_UPLOADED": [
-      "file_hash",
-      "consent_version"
+    "COLLECTOR_QUALIFIED": [
+      "collector_id",
+      "qualified_at"
     ],
-    "CLAIM_REVIEWED": [
-      "reviewer_id",
-      "source_refs"
+    "COLLECTION_PLAN_APPROVED": [
+      "plan_id",
+      "place_ids",
+      "collector_ids"
+    ],
+    "PLACE_REGISTERED": [
+      "canonical_name"
+    ],
+    "PLACE_ALIAS_RECORDED": [
+      "alias_name"
+    ],
+    "PLACES_MERGED": [
+      "surviving_place_id",
+      "absorbed_place_ids"
+    ],
+    "CONSENT_GRANTED": [
+      "participant_id",
+      "consent_version",
+      "scope",
+      "granted_at"
     ],
     "CONSENT_WITHDRAWN": [
+      "participant_id",
       "effective_at",
       "affected_scope"
+    ],
+    "RAW_FILE_RECEIVED": [
+      "file_hash",
+      "file_size",
+      "captured_at"
+    ],
+    "OBSERVATION_UPLOADED": [
+      "collector_id",
+      "plan_id",
+      "place_id",
+      "participant_id",
+      "file_hash",
+      "consent_version",
+      "captured_at"
+    ],
+    "CLAIM_PROPOSED": [
+      "proposer_id",
+      "source_refs",
+      "statement"
+    ],
+    "CLAIM_REVIEWED": [
+      "claim_id",
+      "reviewer_id",
+      "decision",
+      "source_refs"
+    ],
+    "CORRECTION_FILED": [
+      "target_ref",
+      "reason"
+    ],
+    "RESEARCH_USE_RECORDED": [
+      "claim_id",
+      "study_id",
+      "used_at"
+    ],
+    "ARCHIVE_RELEASED": [
+      "claim_id",
+      "scope",
+      "released_at"
+    ],
+    "ARCHIVE_ANNOTATED": [
+      "claim_id",
+      "note",
+      "reason_ref"
+    ],
+    "RELEASE_RESTRICTED": [
+      "claim_id",
+      "restricted_scopes",
+      "reason_ref"
+    ],
+    "TRANSCODE_JOB_STARTED": [
+      "job_id",
+      "shard_count"
+    ],
+    "TRANSCODE_SHARD_COMPLETED": [
+      "job_id",
+      "shard_index",
+      "output_hash"
+    ],
+    "DISPUTE_OPENED": [
+      "idempotency_key",
+      "stored_event_id",
+      "received_event_id",
+      "reason"
+    ],
+    "DISPUTE_RESOLVED": [
+      "dispute_id",
+      "resolution",
+      "kept_event_id"
     ]
   },
   "additionalProperties": false

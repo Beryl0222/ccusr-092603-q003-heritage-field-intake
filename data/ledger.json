@@ -1,0 +1,633 @@
+[
+  {
+    "event_id": "evt-0001",
+    "event_type": "COLLECTOR_QUALIFIED",
+    "aggregate_type": "training_qualification",
+    "aggregate_id": "qual-s001",
+    "occurred_at": "2026-03-01T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s001",
+      "qualified_at": "2026-03-01T09:00:00+08:00",
+      "training_session": "2026春田野伦理与建档培训"
+    },
+    "idempotency_key": "qual:s001"
+  },
+  {
+    "event_id": "evt-0002",
+    "event_type": "COLLECTOR_QUALIFIED",
+    "aggregate_type": "training_qualification",
+    "aggregate_id": "qual-s002",
+    "occurred_at": "2026-03-01T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s002",
+      "qualified_at": "2026-03-01T09:00:00+08:00"
+    },
+    "idempotency_key": "qual:s002"
+  },
+  {
+    "event_id": "evt-0003",
+    "event_type": "COLLECTOR_QUALIFIED",
+    "aggregate_type": "training_qualification",
+    "aggregate_id": "qual-r001",
+    "occurred_at": "2026-03-01T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "r001",
+      "qualified_at": "2026-03-01T09:00:00+08:00",
+      "role": "专业复核"
+    },
+    "idempotency_key": "qual:r001"
+  },
+  {
+    "event_id": "evt-0004",
+    "event_type": "PLACE_REGISTERED",
+    "aggregate_type": "place",
+    "aggregate_id": "place-gulou",
+    "occurred_at": "2026-03-05T10:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "canonical_name": "鼓楼"
+    },
+    "idempotency_key": "place:gulou"
+  },
+  {
+    "event_id": "evt-0005",
+    "event_type": "PLACE_ALIAS_RECORDED",
+    "aggregate_type": "place",
+    "aggregate_id": "place-gulou",
+    "occurred_at": "2026-03-05T10:05:00+08:00",
+    "version": 1,
+    "payload": {
+      "alias_name": "谯楼",
+      "source": "清代县志"
+    }
+  },
+  {
+    "event_id": "evt-0006",
+    "event_type": "PLACE_REGISTERED",
+    "aggregate_type": "place",
+    "aggregate_id": "place-gulou-old",
+    "occurred_at": "2026-03-05T10:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "canonical_name": "古楼",
+      "note": "本地口读音近，暂按新地点登记待核"
+    },
+    "idempotency_key": "place:gulou-old"
+  },
+  {
+    "event_id": "evt-0007",
+    "event_type": "CONSENT_GRANTED",
+    "aggregate_type": "consent",
+    "aggregate_id": "consent-p1",
+    "occurred_at": "2026-03-06T14:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "participant_id": "p1-wang",
+      "consent_version": "consent-v1-2026",
+      "scope": [
+        "campus_research"
+      ],
+      "granted_at": "2026-03-06T14:00:00+08:00",
+      "note": "王老：仅同意校内研究，不同意公开展示影像"
+    },
+    "idempotency_key": "consent:p1:v1"
+  },
+  {
+    "event_id": "evt-0008",
+    "event_type": "CONSENT_GRANTED",
+    "aggregate_type": "consent",
+    "aggregate_id": "consent-p2",
+    "occurred_at": "2026-03-06T15:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "participant_id": "p2-chen",
+      "consent_version": "consent-v1-2026",
+      "scope": [
+        "campus_research",
+        "public_archive"
+      ],
+      "granted_at": "2026-03-06T15:00:00+08:00"
+    },
+    "idempotency_key": "consent:p2:v1"
+  },
+  {
+    "event_id": "evt-0009",
+    "event_type": "COLLECTION_PLAN_APPROVED",
+    "aggregate_type": "collection_plan",
+    "aggregate_id": "plan-2026-gulou",
+    "occurred_at": "2026-03-07T09:30:00+08:00",
+    "version": 1,
+    "payload": {
+      "plan_id": "plan-2026-gulou",
+      "place_ids": [
+        "place-gulou",
+        "place-gulou-old"
+      ],
+      "collector_ids": [
+        "s001",
+        "s002"
+      ],
+      "approved_at": "2026-03-07T09:30:00+08:00"
+    },
+    "idempotency_key": "plan:2026-gulou"
+  },
+  {
+    "event_id": "evt-0010",
+    "event_type": "RAW_FILE_RECEIVED",
+    "aggregate_type": "source_file",
+    "aggregate_id": "file-oral-01",
+    "occurred_at": "2026-08-05T08:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "file_hash": "sha256:1111111111111111",
+      "file_size": 48213402,
+      "captured_at": "2026-08-03T10:20:00+08:00",
+      "media_type": "audio/m4a"
+    },
+    "idempotency_key": "dev-s001:file-oral-01"
+  },
+  {
+    "event_id": "evt-0011",
+    "event_type": "RAW_FILE_RECEIVED",
+    "aggregate_type": "source_file",
+    "aggregate_id": "file-photo-01",
+    "occurred_at": "2026-08-05T08:05:00+08:00",
+    "version": 1,
+    "payload": {
+      "file_hash": "sha256:2222222222222222",
+      "file_size": 7340021,
+      "captured_at": "2026-08-01T16:40:00+08:00",
+      "media_type": "image/jpeg",
+      "note": "鼓楼北面外观；建筑修缮完工于 2026-06-30，影像晚于修缮"
+    },
+    "idempotency_key": "dev-s002:file-photo-01"
+  },
+  {
+    "event_id": "evt-0012",
+    "event_type": "RAW_FILE_RECEIVED",
+    "aggregate_type": "source_file",
+    "aggregate_id": "file-inspect-01",
+    "occurred_at": "2026-08-05T08:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "file_hash": "sha256:3333333333333333",
+      "file_size": 9812554,
+      "captured_at": "2026-08-04T09:15:00+08:00",
+      "media_type": "image/jpeg"
+    },
+    "idempotency_key": "dev-s002:file-inspect-01"
+  },
+  {
+    "event_id": "evt-0013",
+    "event_type": "OBSERVATION_UPLOADED",
+    "aggregate_type": "source_observation",
+    "aggregate_id": "obs-oral-01",
+    "occurred_at": "2026-08-05T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s001",
+      "plan_id": "plan-2026-gulou",
+      "place_id": "place-gulou",
+      "participant_id": "p1-wang",
+      "file_hash": "sha256:1111111111111111",
+      "consent_version": "consent-v1-2026",
+      "captured_at": "2026-08-03T10:20:00+08:00",
+      "transcript_excerpt": "鼓楼清代叫谯楼，木构听老辈说是1948年重修过。"
+    },
+    "idempotency_key": "dev-s001:obs-oral-01"
+  },
+  {
+    "event_id": "evt-0014",
+    "event_type": "OBSERVATION_UPLOADED",
+    "aggregate_type": "source_observation",
+    "aggregate_id": "obs-photo-01",
+    "occurred_at": "2026-08-05T09:05:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s002",
+      "plan_id": "plan-2026-gulou",
+      "place_id": "place-gulou-old",
+      "participant_id": "p2-chen",
+      "file_hash": "sha256:2222222222222222",
+      "consent_version": "consent-v1-2026",
+      "captured_at": "2026-08-01T16:40:00+08:00"
+    },
+    "idempotency_key": "dev-s002:obs-photo-01"
+  },
+  {
+    "event_id": "evt-0015",
+    "event_type": "OBSERVATION_UPLOADED",
+    "aggregate_type": "source_observation",
+    "aggregate_id": "obs-inspect-01",
+    "occurred_at": "2026-08-05T09:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "collector_id": "s002",
+      "plan_id": "plan-2026-gulou",
+      "place_id": "place-gulou-old",
+      "participant_id": "p2-chen",
+      "file_hash": "sha256:3333333333333333",
+      "consent_version": "consent-v1-2026",
+      "captured_at": "2026-08-04T09:15:00+08:00"
+    },
+    "idempotency_key": "dev-s002:obs-inspect-01"
+  },
+  {
+    "event_id": "evt-0016",
+    "event_type": "PLACES_MERGED",
+    "aggregate_type": "place",
+    "aggregate_id": "place-gulou",
+    "occurred_at": "2026-08-10T11:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "surviving_place_id": "place-gulou",
+      "absorbed_place_ids": [
+        "place-gulou-old"
+      ],
+      "reason": "经走访核实“古楼”为“鼓楼”口传异写"
+    },
+    "idempotency_key": "merge:gulou:2026"
+  },
+  {
+    "event_id": "evt-0017",
+    "event_type": "CLAIM_PROPOSED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-A",
+    "occurred_at": "2026-08-12T10:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "proposer_id": "s001",
+      "source_refs": [
+        "obs-photo-01"
+      ],
+      "statement": "这张照片记录了鼓楼修缮前的北侧原状。",
+      "proposed_at": "2026-08-12T10:00:00+08:00"
+    },
+    "idempotency_key": "claim:A"
+  },
+  {
+    "event_id": "evt-0018",
+    "event_type": "CLAIM_REVIEWED",
+    "aggregate_type": "review",
+    "aggregate_id": "review-A",
+    "occurred_at": "2026-08-15T14:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-A",
+      "reviewer_id": "r001",
+      "decision": "rejected",
+      "source_refs": [
+        "obs-photo-01"
+      ],
+      "rationale": "照片拍摄于 2026-08-01，而修缮 2026-06-30 已完工，不可能记录修缮前原状。",
+      "reviewed_at": "2026-08-15T14:00:00+08:00"
+    },
+    "idempotency_key": "review:A"
+  },
+  {
+    "event_id": "evt-0019",
+    "event_type": "CLAIM_PROPOSED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-B",
+    "occurred_at": "2026-08-16T10:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "proposer_id": "s002",
+      "source_refs": [
+        "obs-oral-01"
+      ],
+      "statement": "鼓楼清代称谯楼；口述线索指向 1948 年曾重修木构。",
+      "proposed_at": "2026-08-16T10:00:00+08:00"
+    },
+    "idempotency_key": "claim:B"
+  },
+  {
+    "event_id": "evt-0020",
+    "event_type": "CLAIM_REVIEWED",
+    "aggregate_type": "review",
+    "aggregate_id": "review-B",
+    "occurred_at": "2026-08-20T14:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-B",
+      "reviewer_id": "r001",
+      "decision": "accepted",
+      "source_refs": [
+        "obs-oral-01"
+      ],
+      "rationale": "与县志别名记载互证；1948 年重修表述为口述线索，发布时保留措辞。",
+      "reviewed_at": "2026-08-20T14:00:00+08:00"
+    },
+    "idempotency_key": "review:B"
+  },
+  {
+    "event_id": "evt-0021",
+    "event_type": "CLAIM_PROPOSED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-C",
+    "occurred_at": "2026-08-26T10:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "proposer_id": "s001",
+      "source_refs": [
+        "obs-oral-01",
+        "obs-inspect-01",
+        "claim-B"
+      ],
+      "statement": "综合口述与巡检照片，1948 年重修范围可能包含北面墙体。",
+      "proposed_at": "2026-08-26T10:00:00+08:00"
+    },
+    "idempotency_key": "claim:C"
+  },
+  {
+    "event_id": "evt-0022",
+    "event_type": "CLAIM_REVIEWED",
+    "aggregate_type": "review",
+    "aggregate_id": "review-C",
+    "occurred_at": "2026-08-28T14:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-C",
+      "reviewer_id": "r001",
+      "decision": "accepted",
+      "source_refs": [
+        "obs-oral-01",
+        "obs-inspect-01"
+      ],
+      "rationale": "巡检照片北墙构件与口述年代线索相容，措辞保持“可能”。",
+      "reviewed_at": "2026-08-28T14:00:00+08:00"
+    },
+    "idempotency_key": "review:C"
+  },
+  {
+    "event_id": "evt-0023",
+    "event_type": "CLAIM_PROPOSED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-D",
+    "occurred_at": "2026-08-22T10:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "proposer_id": "s001",
+      "source_refs": [
+        "obs-inspect-01",
+        "obs-photo-01"
+      ],
+      "statement": "鼓楼北侧台基保留有近代排水沟构造。",
+      "proposed_at": "2026-08-22T10:00:00+08:00"
+    },
+    "idempotency_key": "claim:D"
+  },
+  {
+    "event_id": "evt-0024",
+    "event_type": "CLAIM_REVIEWED",
+    "aggregate_type": "review",
+    "aggregate_id": "review-D",
+    "occurred_at": "2026-08-25T14:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-D",
+      "reviewer_id": "r001",
+      "decision": "accepted",
+      "source_refs": [
+        "obs-inspect-01"
+      ],
+      "rationale": "构造层位清晰，可发布。",
+      "reviewed_at": "2026-08-25T14:00:00+08:00"
+    },
+    "idempotency_key": "review:D"
+  },
+  {
+    "event_id": "evt-0025",
+    "event_type": "ARCHIVE_RELEASED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-B",
+    "occurred_at": "2026-09-01T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-B",
+      "scope": [
+        "campus_research"
+      ],
+      "released_at": "2026-09-01T09:00:00+08:00"
+    },
+    "idempotency_key": "release:B:campus"
+  },
+  {
+    "event_id": "evt-0026",
+    "event_type": "ARCHIVE_RELEASED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-C",
+    "occurred_at": "2026-09-01T09:05:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-C",
+      "scope": [
+        "campus_research"
+      ],
+      "released_at": "2026-09-01T09:05:00+08:00"
+    },
+    "idempotency_key": "release:C:campus"
+  },
+  {
+    "event_id": "evt-0027",
+    "event_type": "ARCHIVE_RELEASED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-D",
+    "occurred_at": "2026-09-02T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-D",
+      "scope": [
+        "campus_research",
+        "public_archive"
+      ],
+      "released_at": "2026-09-02T09:00:00+08:00"
+    },
+    "idempotency_key": "release:D:all"
+  },
+  {
+    "event_id": "evt-0028",
+    "event_type": "RESEARCH_USE_RECORDED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-B",
+    "occurred_at": "2026-09-03T11:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-B",
+      "study_id": "study-2026-gulou-07",
+      "used_at": "2026-09-03T11:00:00+08:00"
+    },
+    "idempotency_key": "research-use:B"
+  },
+  {
+    "event_id": "evt-0029",
+    "event_type": "RESEARCH_USE_RECORDED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-D",
+    "occurred_at": "2026-09-05T11:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "claim_id": "claim-D",
+      "study_id": "study-2026-gulou-07",
+      "used_at": "2026-09-05T11:00:00+08:00"
+    },
+    "idempotency_key": "research-use:D"
+  },
+  {
+    "event_id": "evt-0030",
+    "event_type": "CONSENT_WITHDRAWN",
+    "aggregate_type": "consent",
+    "aggregate_id": "consent-p2",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "participant_id": "p2-chen",
+      "effective_at": "2026-09-10T00:00:00+08:00",
+      "affected_scope": [
+        "public_archive"
+      ],
+      "note": "电话确认，不希望影像继续公开展示"
+    },
+    "idempotency_key": "consent:p2:withdraw-public"
+  },
+  {
+    "event_id": "derived:evt-0030:claim-A:01",
+    "event_type": "RELEASE_RESTRICTED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-A",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:release_restricted:evt-0030:claim-A:01",
+    "payload": {
+      "claim_id": "claim-A",
+      "restricted_scopes": [
+        "public_archive"
+      ],
+      "reason_ref": "evt-0030"
+    }
+  },
+  {
+    "event_id": "derived:evt-0030:claim-C:01",
+    "event_type": "RELEASE_RESTRICTED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-C",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:release_restricted:evt-0030:claim-C:01",
+    "payload": {
+      "claim_id": "claim-C",
+      "restricted_scopes": [
+        "public_archive"
+      ],
+      "reason_ref": "evt-0030"
+    }
+  },
+  {
+    "event_id": "derived:evt-0030:claim-C:02",
+    "event_type": "ARCHIVE_ANNOTATED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-C",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:archive_annotated:evt-0030:claim-C:02",
+    "payload": {
+      "claim_id": "claim-C",
+      "note": "受访者已撤回公开许可；已发布页面加注，对应范围停止续发。",
+      "reason_ref": "evt-0030"
+    }
+  },
+  {
+    "event_id": "derived:evt-0030:claim-D:01",
+    "event_type": "RELEASE_RESTRICTED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-D",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:release_restricted:evt-0030:claim-D:01",
+    "payload": {
+      "claim_id": "claim-D",
+      "restricted_scopes": [
+        "public_archive"
+      ],
+      "reason_ref": "evt-0030"
+    }
+  },
+  {
+    "event_id": "derived:evt-0030:claim-D:02",
+    "event_type": "ARCHIVE_ANNOTATED",
+    "aggregate_type": "archive_claim",
+    "aggregate_id": "claim-D",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:archive_annotated:evt-0030:claim-D:02",
+    "payload": {
+      "claim_id": "claim-D",
+      "note": "受访者已撤回公开许可；本版本已用于研究，原始记录保留并追加此说明，结论引用须同步标注授权变化。",
+      "reason_ref": "evt-0030"
+    }
+  },
+  {
+    "event_id": "evt-0031",
+    "event_type": "TRANSCODE_JOB_STARTED",
+    "aggregate_type": "transcode_job",
+    "aggregate_id": "job-t1",
+    "occurred_at": "2026-09-15T08:00:00+08:00",
+    "version": 1,
+    "payload": {
+      "job_id": "job-t1",
+      "shard_count": 4,
+      "source_hashes": [
+        "sha256:1111111111111111",
+        "sha256:2222222222222222",
+        "sha256:3333333333333333"
+      ]
+    },
+    "idempotency_key": "job:t1"
+  },
+  {
+    "event_id": "evt-0032",
+    "event_type": "TRANSCODE_SHARD_COMPLETED",
+    "aggregate_type": "transcode_job",
+    "aggregate_id": "job-t1",
+    "occurred_at": "2026-09-15T08:10:00+08:00",
+    "version": 1,
+    "payload": {
+      "job_id": "job-t1",
+      "shard_index": 0,
+      "output_hash": "sha256:aa00"
+    },
+    "idempotency_key": "job:t1:shard:0"
+  },
+  {
+    "event_id": "evt-0033",
+    "event_type": "TRANSCODE_SHARD_COMPLETED",
+    "aggregate_type": "transcode_job",
+    "aggregate_id": "job-t1",
+    "occurred_at": "2026-09-15T08:20:00+08:00",
+    "version": 1,
+    "payload": {
+      "job_id": "job-t1",
+      "shard_index": 1,
+      "output_hash": "sha256:aa01"
+    },
+    "idempotency_key": "job:t1:shard:1"
+  },
+  {
+    "event_id": "dispute:dev-s002:obs-photo-01:opened:0039",
+    "event_type": "DISPUTE_OPENED",
+    "aggregate_type": "dispute",
+    "aggregate_id": "dispute:dev-s002:obs-photo-01",
+    "occurred_at": "2026-08-05T09:05:00+08:00",
+    "version": 1,
+    "idempotency_key": "system:dispute-opened:dev-s002:obs-photo-01",
+    "payload": {
+      "idempotency_key": "dev-s002:obs-photo-01",
+      "stored_event_id": "evt-0014",
+      "received_event_id": "evt-device-reupload-conflict",
+      "reason": "same_key_consent_version_differs"
+    }
+  }
+]

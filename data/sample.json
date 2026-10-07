@@ -1,9 +1,13 @@
 {
   "event_id": "092507-003-sample-001",
   "event_type": "COLLECTOR_QUALIFIED",
-  "aggregate_type": "field_campaign",
-  "aggregate_id": "heritage_field_intake-001",
+  "aggregate_type": "training_qualification",
+  "aggregate_id": "qual-sample",
   "occurred_at": "2026-09-24T12:00:00+08:00",
   "version": 1,
-  "payload": {}
+  "idempotency_key": "sample:collector-qualified",
+  "payload": {
+    "collector_id": "sample-s001",
+    "qualified_at": "2026-09-24T12:00:00+08:00"
+  }
 }
